@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me?</title>
+    <link rel="icon" type="image/x-icon" href="img/key.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="letter">
+                        <div class="text">
+                            <strong><p>Will you be my girlfriend ???</p></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="heart"></div>
+            </div>
+        </div>
+    <section>
+        <div class="choice">
+            <p class="yes" id="target" onclick="toggleContent()">YES!!!</p>
+        </div>
+        <div class="choice"> 
+            <p class="no" onclick="applyEffect(this)">No</p>
+        </div>
+    </section>
+    <div class="box" id="show" style="display: none;">
+        <h1>Congraturation</h1>
+        <p>Now!, You're My Girlfriend !!!!!</p>
+    </div>
+    <!--<audio id="myAudio" autoplay>
+        <source src="Music/รักแรกพบ.mp3">
+      </audio>-->
+      
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+
+        // Expand //
+        function applyEffect(clickedElement) {
+        var targetElement = document.getElementById('target');
+        targetElement.style.fontSize = '60px';
+        }
+
+        // Alert //
+        //document.getElementById("target").addEventListener("click", function() {
+        //alert("Congraturation: Now, You're My girlfrined!!!");
+        //});
+
+        // Box //
+        function toggleContent() {
+        var text = document.getElementById("show");
+        if (text.style.display === "none") {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+        }
+        //window.addEventListener('click',() => {
+            //document.getElementById("myAudio").play();
+            //audioElement.volume = 0.1; 
+        //});
+        // Music //
+        //window.onload = function() {
+          //  var audioElement = document.getElementById("myAudio");
+            //audioElement.volume = 0.2; // ตั้งค่าความดัง
+
+            //var songs = ['Music/รักแรกพบ.mp3', 'Music/เผลอไป.mp3', 'Music/เธอต้องมีฉัน.mp3', 'Music/สถานีดวงจันทร์.mp3']; // รายชื่อเพลงทั้งหมด
+            //var index = 0; // ดัชนีของเพลงที่จะเล่น
+
+            //audioElement.src = songs[index]; // เริ่มเล่นเพลงแรก
+            //audioElement.play();
+
+            //audioElement.addEventListener('ended', function() { // เมื่อเพลงจบ
+            //    index++; // เลื่อนไปยังเพลงถัดไปในอาร์เรย์
+            //    if (index >= songs.length) { // ถ้าได้เล่นทุกเพลงแล้ว
+            //        index = 0; // กลับไปที่เพลงแรก
+            //    }
+            //    audioElement.src = songs[index]; // เปลี่ยนเพลง
+            //    audioElement.play(); // เริ่มเล่นเพลงใหม่
+           // });
+       // };
+
+    </script>
+</body>
+</html>
